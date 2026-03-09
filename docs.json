@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Reset Password",
+    "content": "Users can reset their password by navigating to Settings, selecting Security, and clicking the Reset Password option. The system will send a verification link to the registered email."
+  },
+  {
+    "title": "Account Creation",
+    "content": "New users can create an account by clicking the Sign Up button on the homepage. They must provide a valid email address, create a password, and verify their email."
+  },
+  {
+    "title": "Updating Profile",
+    "content": "Users can update their personal information such as name, phone number, and profile picture from the Profile Settings page."
+  },
+  {
+    "title": "Deleting Account",
+    "content": "Users who wish to delete their account can go to Account Settings and choose the Delete Account option. This action permanently removes user data."
+  },
+  {
+    "title": "Password Security",
+    "content": "Strong passwords should contain at least eight characters including uppercase letters, lowercase letters, numbers, and special characters."
+  },
+  {
+    "title": "Login Issues",
+    "content": "If users cannot log in, they should verify their email and password. They may also use the Forgot Password feature to recover access."
+  },
+  {
+    "title": "Email Verification",
+    "content": "After signing up, users receive an email verification link. Clicking the link activates the account and allows full access."
+  }
+]

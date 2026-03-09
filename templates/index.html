@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GenAI Chat Assistant</title>
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        #chat-container{
+            width:400px;
+            background:white;
+            border-radius:10px;
+            padding:20px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        #messages{
+            height:300px;
+            overflow-y:auto;
+            border:1px solid #ddd;
+            padding:10px;
+            margin-bottom:10px;
+        }
+
+        input{
+            width:70%;
+            padding:8px;
+        }
+
+        button{
+            padding:8px;
+        }
+
+        .user{
+            color:blue;
+        }
+
+        .bot{
+            color:green;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="chat-container">
+
+<h3>GenAI Assistant</h3>
+
+<div id="messages"></div>
+
+<input type="text" id="message" placeholder="Ask something..." />
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+<script>
+
+async function sendMessage(){
+
+let message = document.getElementById("message").value
+
+document.getElementById("messages").innerHTML +=
+"<p class='user'><b>You:</b> "+message+"</p>"
+
+let response = await fetch("/api/chat",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+message:message
+})
+
+})
+
+let data = await response.json()
+
+document.getElementById("messages").innerHTML +=
+"<p class='bot'><b>Assistant:</b> "+data.reply+"</p>"
+
+document.getElementById("message").value=""
+
+}
+
+</script>
+
+</body>
+</html>
